@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Mini Store built by MEAN</title>
+    <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular-route/angular-route.js"></script>
+    <script type="text/javascript" src = "assets/app.js"></script>
+    <!-- materialize setup -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- END materialize setup -->
+  </head>
+  <body>
+    <div class="container">
+    <h2>Welcome to the Mini Store</h2>
+    <div class="row">
+      <div class="col s2"><a href="#!/dashboard">Dashboard</a></div>
+      <div class="col s2"><a href="#!/products">Products</a></div>
+      <div class="col s2"><a href="#!/orders">Orders</a></div>
+      <div class="col s2"><a href="#!/customers">Customers</a></div>
+      <div class="col s2"><a href="#!/Settings">Settings</a></div>
+    </div>
+
+    <div ng-view="">
+
+    </div>
+    </div>
+  </body>
+</html>
