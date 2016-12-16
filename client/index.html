@@ -3,9 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Mini Store built by MEAN</title>
+    <!-- angular modules setup -->
     <script type="text/javascript" src="angular/angular.js"></script>
     <script type="text/javascript" src="angular-route/angular-route.js"></script>
+    <!-- app setup -->
     <script type="text/javascript" src = "assets/app.js"></script>
+    <!-- controllers setup -->
+    <script type="text/javascript" src = "assets/controllers/ProductsController.js"></script>
+    <script type="text/javascript" src = "assets/controllers/OrdersController.js"></script>
+    <script type="text/javascript" src = "assets/controllers/DashController.js"></script>
+    <script type="text/javascript" src = "assets/controllers/CustomersController.js"></script>
+    <!-- factory setup -->
+    <script type="text/javascript" src = "assets/factories/productFactory.js"></script>
+    <script type="text/javascript" src = "assets/factories/usersFactory.js"></script>
     <!-- materialize setup -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -17,11 +27,11 @@
     <div class="container">
     <h2>Welcome to the Mini Store</h2>
     <div class="row">
-      <div class="col s2"><a href="#!/dashboard">Dashboard</a></div>
-      <div class="col s2"><a href="#!/products">Products</a></div>
-      <div class="col s2"><a href="#!/orders">Orders</a></div>
-      <div class="col s2"><a href="#!/customers">Customers</a></div>
-      <div class="col s2"><a href="#!/Settings">Settings</a></div>
+      <div class="col s2"><h5><a href="#!/dashboard">Dashboard</a></h5></div>
+      <div class="col s2"><h5><a href="#!/products">Products</a></h5></div>
+      <div class="col s2"><h5><a href="#!/orders">Orders</a></h5></div>
+      <div class="col s2"><h5><a href="#!/customers">Customers</a></h5></div>
+      <div class="col s2"><h5><a href="#!/Settings">Settings</a></h5></div>
     </div>
 
     <div ng-view="">

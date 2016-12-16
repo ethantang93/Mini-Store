@@ -1,1 +1,34 @@
-<h2>products</h2>
+<div ng-controller="ProductController" class="row">
+    <div class="left_manage_bar col s3">
+        <input type="text" ng-model="search_input" placeholder="Search Product..."><br>
+        <p>Add a New Product</p>
+        <form ng-model='product' ng-submit="AddProduct(product)">
+            <span>Name: </span>
+            <input type="text" ng-model="product.name" value="">
+            <span>Image Url: </span>
+            <input type="text" ng-model="product.url" value="">
+            <span>Description: </span>
+            <input type="text" ng-model="product.description" value="">
+            <span>Initial Quantity: </span>
+            <input type="text" ng-model="product.quantity" value="">
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+    <div class="col s9">
+        <div class="col s6 m5" ng-repeat="product in products">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src={{product.url}}>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <span class="card-title">{{product.name}}</span>
+                        <p>{{product.description}}</p>
+                        <p>({{product.quantity}} left)</p>
+                        {{product.image}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
