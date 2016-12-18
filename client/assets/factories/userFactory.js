@@ -15,6 +15,11 @@ app.factory('userFactory',['$http',function($http){
         callback(returned_data.data);
       })
     }
+    this.RemoveCustomer = function(id){
+      $http.delete(`/user/${id}`).then(function(returned_data){
+        console.log("delete success",returned_data.data);
+      });
+    }
   }
   return new userFactory();
 }])

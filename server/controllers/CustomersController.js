@@ -8,8 +8,8 @@ function CustomersController(){
         console.log(err);
       }else{
         res.json(results);
-      }
-    })
+      };
+    });
   };
   this.create = function(req,res){
     user.create(req.body,function(err,result){
@@ -19,7 +19,17 @@ function CustomersController(){
         console.log("success creating user object",result);
         res.json(result);
       };
-    })
-  }
-}
+    });
+  };
+  this.delete = function(req,res){
+    user.remove({_id:req.params.id},function(err,result){
+      if(err){
+        console.log(err);
+      }else{
+        console.log("delete user success",result);
+        res.json(result);
+      };
+    });
+  };
+};
 module.exports = new CustomersController();

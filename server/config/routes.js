@@ -6,4 +6,5 @@ module.exports = function(app){
   app.delete('/product/:id',products.delete);
   app.get('/users', users.index);
   app.post('/user', users.create);
+  app.delete('/user/:id',users.delete)
 }

@@ -14,5 +14,11 @@ app.controller('CustomersController',['$scope','userFactory',function($scope,use
       customer.name="";
     });
     index();
-  }
+  };
+
+  $scope.RemoveCustomer = function(id){
+    console.log("this is the id got from the function", id)
+    userFactory.RemoveCustomer(id);
+    index();
+  };
 }])

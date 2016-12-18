@@ -5,7 +5,7 @@ app.controller('ProductController',['$scope','productFactory',function($scope,pr
     });
   };
 
-  $scope.products = {};
+  $scope.products = [];
   index();
   $scope.AddProduct = function(product){
     console.log("product info in the controller",product);
