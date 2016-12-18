@@ -23,20 +23,38 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!-- END materialize setup -->
   </head>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.button-collapse').sideNav({
+      menuWidth: 240, // Default is 240
+      // edge: 'right', // Choose the horizontal origin
+      // closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      // draggable: true // Choose whether you can drag to open on touch screens
+    });
+    })
+  </script>
   <body>
-    <div class="container">
-    <h2>Welcome to the Mini Store</h2>
-    <div class="row">
-      <div class="col s2"><h5><a href="#!/dashboard">Dashboard</a></h5></div>
-      <div class="col s2"><h5><a href="#!/products">Products</a></h5></div>
-      <div class="col s2"><h5><a href="#!/orders">Orders</a></h5></div>
-      <div class="col s2"><h5><a href="#!/customers">Customers</a></h5></div>
-      <div class="col s2"><h5><a href="#!/Settings">Settings</a></h5></div>
-    </div>
+    <header>
+        <nav>
+          <div class="nav-wrapper blue">
+            <a href="" class="brand-logo left" style="padding-left:10%">Mini Store</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li class="col s2"><a href="#!/dashboard">Dashboard</a></li>
+              <li class="col s2"><a href="#!/products">Products</a></li>
+              <li class="col s2"><a href="#!/orders">Orders</a></li>
+              <li class="col s2"><a href="#!/customers">Customers</a></li>
+              <li class="col s2"><a href="#!/Settings">Settings</a></li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <main style="padding-top:3%">
+      <div class="container">
 
-    <div ng-view="">
+        <div ng-view="" class="">
 
-    </div>
-    </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

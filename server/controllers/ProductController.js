@@ -23,5 +23,16 @@ function ProductController(){
       };
     })
   };
+  this.delete = function(req,res){
+    console.log("id",req.params.id);
+    product.remove({_id:req.params.id},function(err,result){
+      if(err){
+        console.log(err);
+      }else{
+        console.log("delete success")
+        res.json(result);
+      }
+    })
+  }
 }
 module.exports = new ProductController();

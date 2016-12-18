@@ -1,1 +1,31 @@
-<h2>customers</h2>
+<div class="row" ng-controller="CustomersController">
+  <div class="col s4">
+
+    <form ng-model='customer' ng-submit="AddCustomer(customer)">
+      <div class="input-field">
+        <input id="name" type="text" ng-model="customer.name" value="" class="validate">
+        <label for="name">Name</label>
+      </div>
+      <button class="btn waves-effect waves-light z-depth-3" type="submit" name="action">Add Customer
+          <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+  <div class="col s8">
+    <table class="highlight bordered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Created At</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="customer in customers">
+          <td>{{customer.name}}</td>
+          <td>{{customer.created_at | date:'hh:mm, MMM dd, yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

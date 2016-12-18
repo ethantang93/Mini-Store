@@ -9,8 +9,19 @@ app.controller('ProductController',['$scope','productFactory',function($scope,pr
   index();
   $scope.AddProduct = function(product){
     console.log("product info in the controller",product);
-    productFactory.create(product);
+    productFactory.create(product,function(){
+      product.name = "";
+      product.url = "";
+      product.description = "";
+      product.quantity = "";
+    });
+
     index();
   };
+  $scope.removeProduct = function(id){
+    console.log("id", id);
+    productFactory.remove(id);
+    index();
+  }
 
 }])

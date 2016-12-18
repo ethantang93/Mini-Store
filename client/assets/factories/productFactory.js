@@ -4,7 +4,6 @@ app.factory('productFactory',['$http',function($http){
     var _this = this;
     this.index = function(callback){
       $http.get('/products').then(function(returned_data){
-        console.log(returned_data);
         console.log(returned_data.data);
         products = returned_data.data;
         callback(products);
@@ -18,6 +17,12 @@ app.factory('productFactory',['$http',function($http){
         callback(returned_data.data)
       })
     };
+
+    this.remove = function(id){
+      $http.delete(`/product/${id}`).then(function(){
+        console.log("finished deleting")
+      })
+    }
 
   }
   return new productFactory();
