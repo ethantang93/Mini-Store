@@ -1,1 +1,17 @@
-<h2>orders</h2>
+<div class="row" ng-controller='OrdersController'>
+  <form ng-submit='placeOrder(order)'>
+    <label>Customer:</label>
+    <select class="browser-default" ng-model='order.user_id'>
+      <option value = {{user._id}} ng-repeat='user in users'>{{user.name}}</option>
+    </select>
+    <label>Products:</label>
+    <select class="browser-default" ng-model='order.product_id'>
+      <option value = {{product._id}} ng-repeat='product in products'>{{product.name}}</option>
+    </select>
+    <label>numbers to purchase</label>
+    <input type="text" name="" ng-model='order.quantity'>
+    <button class="btn waves-effect waves-light z-depth-3" type="submit" name="action">Purchase
+        <i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

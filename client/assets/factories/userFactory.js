@@ -4,7 +4,7 @@ app.factory('userFactory',['$http',function($http){
 
     this.index = function(callback){
       $http.get('/users').then(function(returned_data){
-        users = returned_data;
+        users = returned_data.data;
         callback(users);
       });
     };
