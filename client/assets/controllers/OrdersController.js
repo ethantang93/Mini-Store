@@ -11,16 +11,24 @@ app.controller('OrdersController',['$scope','productFactory','userFactory','orde
       console.log($scope.users)
     });
   };
+  var order_index = function(){
+    orderFactory.index(function(returned_data){
+      $scope.orders = returned_data;
+      console.log($scope.orders)
+    });
+  };
 
   $scope.products = [];
-  $scope.users = []
+  $scope.users = [];
+  $scope.orders = [];
   product_index();
   user_index();
-
+  order_index();
 
   $scope.placeOrder = function (order){
     console.log(order);
     orderFactory.AddOrder(order)
+    order_index();
   }
 
 }])

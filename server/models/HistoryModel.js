@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var OrdersSchema = new mongoose.Schema({
-  user_id:String,
-  product_id:String,
-  quantity:Number
+  _buyer:{type:mongoose.Schema.ObjectId,ref:'User',required:true},
+  _bought:{type:mongoose.Schema.ObjectId,ref:'Product',required:true},
+  quantity:{type:Number,required:true},
+  created_at: { type: Date, default: Date.now() }
 });
 mongoose.model('Order',OrdersSchema);

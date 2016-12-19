@@ -1,11 +1,11 @@
 <div class="row" ng-controller='OrdersController'>
   <form ng-submit='placeOrder(order)'>
     <label>Customer:</label>
-    <select class="browser-default" ng-model='order.user_id'>
+    <select class="browser-default" ng-model='order._buyer'>
       <option value = {{user._id}} ng-repeat='user in users'>{{user.name}}</option>
     </select>
     <label>Products:</label>
-    <select class="browser-default" ng-model='order.product_id'>
+    <select class="browser-default" ng-model='order._bought'>
       <option value = {{product._id}} ng-repeat='product in products'>{{product.name}}</option>
     </select>
     <label>numbers to purchase</label>
@@ -14,4 +14,22 @@
         <i class="material-icons right">send</i>
     </button>
   </form>
+
+  <!-- displaying the order histories -->
+  <table class="highlight bordered">
+    <thead>
+      <tr>
+        <td>Customer Name</td>
+        <td>Product</td>
+        <td>quantity</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="order in orders">
+        <td>{{order._buyer.name}}</td>
+        <td>{{order._bought.name}}</td>
+        <td>{{order.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

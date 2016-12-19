@@ -5,11 +5,14 @@ var product = mongoose.model('Product')
 function OrderController(){
   this.index = function(req,res){
     console.log('index route');
-    order.find({},function(err,results){
+    order.find({})
+    .populate('_buyer')
+    .populate('_bought')
+    .exec(function(err,result){
       if(err){
-        console.log(err);
+        res.json(err);
       }else{
-        res.json(results);
+        res.json(result);
       }
     })
   };
@@ -20,8 +23,8 @@ function OrderController(){
         console.log(err);
       }else{
         console.log("success creating order object",result);
-        console.log("!!!!",req.body.product_id)
-        var item = product.findOne({_id:req.body.product_id},function(err2,result2){
+        console.log("!!!!",req.body._bought)
+        var item = product.findOne({_id:req.body._bought},function(err2,result2){
           if(err2){
             console.log("not found",err2)
           }else{
