@@ -31,8 +31,8 @@ app.controller('OrdersController',['$scope','productFactory','userFactory','orde
       order._buyer='';
       order._bought='';
       order.quantity='';
+      order_index();
     })
-    order_index();
   }
 
 }])
