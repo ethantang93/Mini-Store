@@ -1,9 +1,9 @@
 <div class="row" ng-controller='OrdersController'>
   <form ng-submit='placeOrder(order)'>
-    <label>Customer:</label>
-    <select class="browser-default" ng-model='order._buyer'>
-      <option value = {{user._id}} ng-repeat='user in users'>{{user.name}}</option>
-    </select>
+      <label>Customer:</label>
+      <select class="browser-default" ng-model='order._buyer'>
+        <option value = {{user._id}} ng-repeat='user in users'>{{user.name}}</option>
+      </select>
     <label>Products:</label>
     <select class="browser-default" ng-model='order._bought'>
       <option value = {{product._id}} ng-repeat='product in products'>{{product.name}}</option>

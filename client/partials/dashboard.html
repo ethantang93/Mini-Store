@@ -1,9 +1,6 @@
 <div class="row">
-    <div class="col s2">
 
-    </div>
-
-    <div class="col s10" ng-controller='ProductController'>
+    <div class="col s12" ng-controller='ProductController'>
         <div class="col s2 m2" ng-repeat="product in products |filter:search_input">
             <div class="card">
                 <div class="card-image">
@@ -17,19 +14,19 @@
                 </div>
             </div>
         </div>
-        <div class="col s12" ng-controller='OrdersController'>
-            <div class="chip">
-              recent orders
+        <div class="col s12">
+            <div class="col s6" style="padding-left:0%" ng-controller='OrdersController'>
+                <div class="chip">
+                    recent orders
+                </div>
+                <p ng-repeat="order in orders">{{order._buyer.name}} Purchased {{order.quantity}} {{order._bought.name}} </p>
             </div>
-                    <p ng-repeat="order in orders">{{order._buyer.name}} Purchased {{order.quantity}} {{order._bought.name}} </p>
-        </div>
-        <div class="col s12" ng-controller='CustomersController'>
-          <div class="chip">
-            new customers
-          </div>
-
-              <p ng-repeat="customer in customers">{{customer.name}} Joined the Store on {{customer.created_at | date:'hh:mm, MMM dd, yyyy'}}</p>
-
+            <div class="col s6" style="padding-left:7%" ng-controller='CustomersController'>
+                <div class="chip">
+                    new customers
+                </div>
+                <p ng-repeat="customer in customers">{{customer.name}} Joined the Store on {{customer.created_at | date:'hh:mm, MMM dd, yyyy'}}</p>
+            </div>
         </div>
     </div>
 </div>

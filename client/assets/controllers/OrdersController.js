@@ -27,7 +27,11 @@ app.controller('OrdersController',['$scope','productFactory','userFactory','orde
 
   $scope.placeOrder = function (order){
     console.log(order);
-    orderFactory.AddOrder(order)
+    orderFactory.AddOrder(order,function(){
+      order._buyer='';
+      order._bought='';
+      order.quantity='';
+    })
     order_index();
   }
 
