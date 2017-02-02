@@ -1,7 +1,6 @@
 <div class="row">
-
     <div class="col s12" ng-controller='ProductController'>
-        <div class="col s2 m2" ng-repeat="product in products |filter:search_input">
+        <div class="col s3 m3" ng-repeat="product in products |filter:search_input">
             <div class="card">
                 <div class="card-image">
                     <img src={{product.url}}>
