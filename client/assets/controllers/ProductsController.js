@@ -14,9 +14,9 @@ app.controller('ProductController',['$scope','productFactory',function($scope,pr
       product.url = "";
       product.description = "";
       product.quantity = "";
+      index();
     });
 
-    index();
   };
   $scope.removeProduct = function(id){
     console.log("id", id);
