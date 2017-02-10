@@ -1,7 +1,7 @@
 var app = angular.module('app',['ngRoute']);
 app.config(function($routeProvider){
   $routeProvider.when('/dashboard',{
-    templateUrl:"/partials/dashboard.html"
+    templateUrl:"/ministore/partials/dashboard.html"
   })
   .when('/customers',{
     templateUrl:"/partials/customers.html"
