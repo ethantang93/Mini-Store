@@ -1,19 +1,19 @@
 var app = angular.module('app',['ngRoute']);
 app.config(function($routeProvider){
   $routeProvider.when('/dashboard',{
-    templateUrl:"/ministore/partials/dashboard.html"
+    templateUrl:"/partials/dashboard.html"
   })
   .when('/customers',{
-    templateUrl:"/ministore/partials/customers.html"
+    templateUrl:"/partials/customers.html"
   })
   .when('/orders',{
-    templateUrl:"/ministore/partials/orders.html"
+    templateUrl:"/partials/orders.html"
   })
   .when('/products',{
-    templateUrl:"/ministore/partials/products.html"
+    templateUrl:"/partials/products.html"
   })
   .when('/settings',{
-    templateUrl:"/ministore/partials/settings.html"
+    templateUrl:"/partials/settings.html"
   })
   .otherwise({redirectTo:'/dashboard'})
 });
