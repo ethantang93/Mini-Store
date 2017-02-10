@@ -4,16 +4,16 @@ app.config(function($routeProvider){
     templateUrl:"/ministore/partials/dashboard.html"
   })
   .when('/customers',{
-    templateUrl:"/partials/customers.html"
+    templateUrl:"/ministore/partials/customers.html"
   })
   .when('/orders',{
-    templateUrl:"/partials/orders.html"
+    templateUrl:"/ministore/partials/orders.html"
   })
   .when('/products',{
-    templateUrl:"/partials/products.html"
+    templateUrl:"/ministore/partials/products.html"
   })
   .when('/settings',{
-    templateUrl:"/partials/settings.html"
+    templateUrl:"/ministore/partials/settings.html"
   })
   .otherwise({redirectTo:'/dashboard'})
 });
