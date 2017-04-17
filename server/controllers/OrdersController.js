@@ -4,7 +4,6 @@ var product = mongoose.model('Product')
 
 function OrderController(){
   this.index = function(req,res){
-    console.log('index route');
     order.find({})
     .populate('_buyer')
     .populate('_bought')
@@ -22,8 +21,7 @@ function OrderController(){
       if(err){
         console.log(err);
       }else{
-        console.log("success creating order object",result);
-        console.log("!!!!",req.body._bought)
+        console.log("success creating order object");
         var item = product.findOne({_id:req.body._bought},function(err2,result2){
           if(err2){
             console.log("not found",err2)
@@ -32,8 +30,10 @@ function OrderController(){
             result2.save(function(err3,result3){
               if(err3){
                 console.log(err3)
+                res.json(result3)
               }else{
                 console.log(result3)
+                res.json(result3)
               }
             })
           }

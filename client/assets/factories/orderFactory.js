@@ -9,7 +9,7 @@ app.factory('orderFactory',['$http',function($http){
       });
     };
 
-    this.AddOrder = function(order,callback){
+    this.create = function(order,callback){
       $http.post('/order',order).then(function(returned_data){
         console.log("after http request",returned_data.data);
         callback(returned_data.data);

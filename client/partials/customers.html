@@ -1,10 +1,14 @@
 <div class="row" ng-controller="CustomersController">
   <div class="col s4">
 
-    <form ng-model='customer' ng-submit="AddCustomer(customer)">
+    <form ng-model='customer' ng-submit="create(customer)">
       <div class="input-field">
         <input id="name" type="text" ng-model="customer.name" value="" class="validate">
         <label for="name">Name</label>
+      </div>
+      <div class="input-field">
+        <input id="email" type="email" ng-model="customer.email" value="" class="validate">
+        <label for="email" data-error="invalid email">Email</label>
       </div>
       <button class="btn waves-effect waves-light z-depth-3" type="submit" name="action">Add Customer
           <i class="material-icons right">send</i>
@@ -16,6 +20,7 @@
       <thead>
         <tr>
           <td>Name</td>
+          <td>Email</td>
           <td>Created At</td>
           <td>actions</td>
         </tr>
@@ -23,8 +28,9 @@
       <tbody>
         <tr ng-repeat="customer in customers">
           <td>{{customer.name}}</td>
-          <td>{{customer.created_at | date:'hh:mm, MMM dd, yyyy'}}</td>
-          <td><button class="btn waves-effect waves-light z-depth-3 red lighten-1" ng-click="RemoveCustomer(customer._id)" name="action">Remove</button></td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.createdAt | date:'hh:mm, MMM dd, yyyy'}}</td>
+          <td><button class="btn waves-effect waves-light z-depth-3 red lighten-1" ng-click="remove(customer._id)" name="action">Remove</button></td>
         </tr>
       </tbody>
     </table>

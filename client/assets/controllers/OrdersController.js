@@ -1,14 +1,14 @@
-app.controller('OrdersController',['$scope','productFactory','userFactory','orderFactory',function($scope,productFactory,userFactory,orderFactory){
+app.controller('OrdersController',['$scope','productFactory','CustomerFactory','orderFactory',function($scope,productFactory,CustomerFactory,orderFactory){
   var product_index = function(){
     productFactory.index(function(returned_data){
       $scope.products = returned_data;
       console.log($scope.products)
     });
   };
-  var user_index = function(){
-    userFactory.index(function(returned_data){
-      $scope.users = returned_data;
-      console.log($scope.users)
+  var customer_index = function(){
+    CustomerFactory.index(function(returned_data){
+      $scope.customers = returned_data;
+      console.log($scope.customers)
     });
   };
   var order_index = function(){
@@ -19,20 +19,21 @@ app.controller('OrdersController',['$scope','productFactory','userFactory','orde
   };
 
   $scope.products = [];
-  $scope.users = [];
+  $scope.customers = [];
   $scope.orders = [];
   product_index();
-  user_index();
+  customer_index();
   order_index();
 
   $scope.placeOrder = function (order){
     console.log(order);
-    orderFactory.AddOrder(order,function(){
-      order._buyer='';
-      order._bought='';
-      order.quantity='';
+    orderFactory.create(order,function(){
+      order._buyer="";
+      order._bought="";
+      order.quantity="";
       order_index();
-    })
+    });
+
   }
 
 }])

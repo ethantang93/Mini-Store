@@ -2,7 +2,7 @@
   <form ng-submit='placeOrder(order)'>
       <label>Customer:</label>
       <select class="browser-default" ng-model='order._buyer'>
-        <option value = {{user._id}} ng-repeat='user in users'>{{user.name}}</option>
+        <option value = {{customer._id}} ng-repeat='customer in customers'>{{customer.name}}</option>
       </select>
     <label>Products:</label>
     <select class="browser-default" ng-model='order._bought'>

@@ -14,6 +14,7 @@ app.controller('ProductController',['$scope','productFactory',function($scope,pr
       product.url = "";
       product.description = "";
       product.quantity = "";
+      product.price="";
       index();
     });
 

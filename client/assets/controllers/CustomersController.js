@@ -1,6 +1,6 @@
-app.controller('CustomersController',['$scope','userFactory',function($scope,userFactory){
+app.controller('CustomersController',['$scope','CustomerFactory',function($scope,CustomerFactory){
   var index = function(){
-    userFactory.index(function(returned_data){
+    CustomerFactory.index(function(returned_data){
       console.log("this is the index from customer controller",returned_data);
       $scope.customers = returned_data;
     });
@@ -9,16 +9,17 @@ app.controller('CustomersController',['$scope','userFactory',function($scope,use
   $scope.customers = {}
   index();
 
-  $scope.AddCustomer = function(customer){
-    userFactory.AddCustomer(customer,function(){
+  $scope.create = function(customer){
+    CustomerFactory.create(customer,function(){
       customer.name="";
+      customer.email="";
     });
     index();
   };
 
-  $scope.RemoveCustomer = function(id){
+  $scope.remove = function(id){
     console.log("this is the id got from the function", id)
-    userFactory.RemoveCustomer(id);
+    CustomerFactory.remove(id);
     index();
   };
 }])

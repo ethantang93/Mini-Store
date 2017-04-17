@@ -3,7 +3,6 @@ var product = mongoose.model('Product');
 
 function ProductController(){
   this.index = function(req,res){
-    console.log('index route');
     product.find({},function(err,results){
       if(err){
         console.log(err);

@@ -15,6 +15,10 @@
             <label for="url">Image Url: </label>
           </div>
           <div class="input-field">
+            <input id="price" type="text" ng-model="product.price" value="" class="validate">
+            <label for="price">Price</label>
+          </div>
+          <div class="input-field">
             <input id="description" type="text" ng-model="product.description" value="" class="validate">
             <label for="description">Description</label>
           </div>
@@ -35,6 +39,7 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title">{{product.name}}</span>
+                    <p>${{product.price}}</p>
                     <p>{{product.description}}</p>
                     <p>({{product.quantity}} left)</p>
 
