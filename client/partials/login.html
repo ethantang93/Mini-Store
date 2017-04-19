@@ -1,0 +1,40 @@
+<header>
+	<nav>
+		<div class="nav-wrapper blue">
+			<a href="" class="brand-logo center" style="padding-left:0%">Store Inventory Tracking</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<div class="container">
+		<div class="row">
+			<form ng-submit="register(registration)">
+					<div class="input-field col s6">
+						{{errors.name.message}}
+						<input id="first_name" type="text" ng-model="registration.name">
+						<label for="first_name">Name</label>
+					</div>
+					<!-- <div class="input-field col s6">
+						<input id="last_name" type="text" ng-model="registration.last_name">
+						<label for="last_name">Last Name</label>
+					</div> -->
+					<div class="input-field col s6">
+						{{errors.email.message}}
+						<input id="email" type="email" ng-model="registration.email">
+						<label for="email">Email</label>
+					</div>
+					<div class="input-field col s6">
+						{{errors.password.message}}
+						<input id="password" type="password" ng-model="registration.password" value="">
+						<label for="password">Password</label>
+					</div>
+					<!-- <div class="input-field col s6">
+						<input id="confirm" type="password" ng-model="registration.confirm_password" value="">
+						<label for="confirm">confirm password</label>
+					</div> -->
+					<input type="submit" value="Register">
+				</form>
+		</div>
+</div>
